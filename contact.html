@@ -170,12 +170,36 @@
           <input id="address"name="address" type="text">
           <div class="error"></div>
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Submit</button>
+      
   </form>
 </div>
 
 <!-- end here  -->
-
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Your Beautifull </h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body text-center fs-5">
+            😁
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
 <!-- footers  -->
 
 <footer class="bg-foot mt-5 float-end border w-100" style="background-color: #0b368d;">
@@ -194,10 +218,10 @@
 <!-- dom manipulation -->
 <script>  
   const form = document.getElementById('form');
-const name = document.getElementById('name');
-const email = document.getElementById('email');
-const phone = document.getElementById('phone');
-const address = document.getElementById('address');
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const phone = document.getElementById('phone');
+  const address = document.getElementById('address');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -277,9 +301,9 @@ const validateInputs = () => {
           data:$("form").serialize(),
           method:"post",
           success:function (response){
-              alert("Form has been submitted successfully youcan leave the page now")
+            //   alert("Form has been submitted successfully youcan leave the page now")
               window.location.reload()
-              window.location.href="index.html"
+              window.location.href="contact.html"
           },
           error:function (err){
               alert("Something Error")
